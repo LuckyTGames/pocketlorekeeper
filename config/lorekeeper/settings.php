@@ -24,7 +24,11 @@ return [
     | Do not change this value!
     |
     */
+<<<<<<< HEAD
     'version' => '2.1.2',
+=======
+    'version'                                           => '2.1.0',
+>>>>>>> 769ba5d841efc9bae1e24bfd8f065b0a519972b6
 
     /*
     |--------------------------------------------------------------------------
@@ -36,7 +40,7 @@ return [
     | site wherever the name needs to be displayed.
     |
     */
-    'site_name' => 'Lorekeeper',
+    'site_name'                                         => 'Lorekeeper',
 
     /*
     |--------------------------------------------------------------------------
@@ -48,7 +52,7 @@ return [
     | It is not, however, displayed on the site itself. This should be kept short and snappy!
     |
     */
-    'site_desc' => 'A Lorekeeper ARPG',
+    'site_desc'                                         => 'A Lorekeeper ARPG',
 
     /*
     |--------------------------------------------------------------------------
@@ -59,6 +63,7 @@ return [
     |       This is used in the automatic generation of character codes.
     |       {category}: This is replaced by the character category code.
     |       {number}: This is replaced by the character number.
+    /       {year}: This is replaced by the current year.
     |
     |       e.g. Under the default setting ({category}-{number}),
     |       a character in a category called "MYO" (code "MYO") with number 001
@@ -106,13 +111,13 @@ return [
     |       Default: 0/Disabled, 1 to enable.
     |
     */
-    'character_codes' => '{category}-{number}',
-    'character_number_digits' => 3,
-    'character_pull_number' => 'all',
+    'character_codes'                                   => '{category}-{number}',
+    'character_number_digits'                           => 3,
+    'character_pull_number'                             => 'all',
 
-    'reset_character_status_on_transfer' => 0,
-    'reset_character_profile_on_transfer' => 0,
-    'clear_myo_slot_name_on_approval' => 0,
+    'reset_character_status_on_transfer'                => 0,
+    'reset_character_profile_on_transfer'               => 0,
+    'clear_myo_slot_name_on_approval'                   => 0,
 
     /*
     |--------------------------------------------------------------------------
@@ -136,10 +141,10 @@ return [
     | 'masterlist_image_background' => 'png',
     |
     */
-    'watermark_masterlist_images' => 0,
-    'masterlist_image_dimension' => 0,
-    'masterlist_image_format' => null,
-    'masterlist_image_background' => '#ffffff',
+    'watermark_masterlist_images'                       => 0,
+    'masterlist_image_dimension'                        => 0,
+    'masterlist_image_format'                           => null,
+    'masterlist_image_background'                       => '#ffffff',
 
     /*
     |--------------------------------------------------------------------------
@@ -153,8 +158,8 @@ return [
     | Images above this cap in either dimension will be resized to suit. Enter "0" to disable resizing.
     |
     */
-    'store_masterlist_fullsizes' => 0,
-    'masterlist_fullsizes_cap' => 0,
+    'store_masterlist_fullsizes'                        => 0,
+    'masterlist_fullsizes_cap'                          => 0,
 
     /*
     |--------------------------------------------------------------------------
@@ -169,11 +174,37 @@ return [
     | Expects the whole of the character to be visible in the thumbnail.
     |
     */
-    'masterlist_thumbnails' => [
-        'width' => 200,
-        'height' => 200
+    'masterlist_thumbnails'                             => [
+        'width'  => 200,
+        'height' => 200,
     ],
-    'watermark_masterlist_thumbnails' => 0,
+
+    'watermark_masterlist_thumbnails'                   => 0,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Watermark Resizing
+    |--------------------------------------------------------------------------
+    |
+    | This affects the size of the watermark, resizing it to fit the masterlist image.
+    | This requires the 'watermark_masterlist_images' option to be set to 1.
+    |
+    | 0: Does not automatically resize watermark. 1: Resize watermarks.
+    | Expects the whole of the character to be visible in the thumbnail.
+    |
+    | The watermark percent is the scale of the watermark.
+    | The default is '0.9', or 90 percent of the image to be watermarked.
+    |
+    | The final option is to also resize watermarks on thumbnails.
+    | It will assume the same scale as masterlist image.
+    | 0: Does not resize thumbnail watermarks. 1: Resizes thumbnail watermarks.
+    | This requires the 'watermark_masterlist_thumbnails' option to be set to 1.
+    |
+    */
+
+    'watermark_resizing'                                => 0,
+    'watermark_percent'                                 => 0.9,
+    'watermark_resizing_thumb'                          => 0,
 
     /*
     |--------------------------------------------------------------------------
@@ -189,7 +220,26 @@ return [
     | Simply change to "1" to enable, or keep at "0" to disable.
     |
     */
-    'masterlist_image_automation' => 0,
+    'masterlist_image_automation'                       => 0,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Masterlist Image Automation Removing Manual Upload For Users
+    |--------------------------------------------------------------------------
+    |
+    | NOTE: This feature will only function if the above feature, the
+    | Masterlist Image Automation Replacing Cropper, is also enabled.
+    |
+    | The following option is for if you DO want to disable the manual uploading
+    | of thumbnails, to ensure users do not attempt to upload their
+    | own thumbnails regardless of the automation.
+    | This will remove it purely for users, not administration.
+    |
+    | 0: Keeps the manual thumbnail upload for users.
+    | 1: Hides the thumbnail upload for users.
+    |
+    */
+    'masterlist_image_automation_hide_manual_thumbnail' => 0,
 
     /*
     |--------------------------------------------------------------------------
@@ -201,7 +251,7 @@ return [
     | there are limits on data storage, so raising this is not recommended.
     |
     */
-    'trade_asset_limit' => 20,
+    'trade_asset_limit'                                 => 20,
 
     /*
     |--------------------------------------------------------------------------
@@ -212,7 +262,7 @@ return [
     | single shop transaction.
     |
     */
-    'default_purchase_limit' => 99,
+    'default_purchase_limit'                            => 99,
 
     /*
     |--------------------------------------------------------------------------
@@ -222,6 +272,6 @@ return [
     | Symbol for the (real world) currency used for sales posts.
     |
     */
-    'currency_symbol' => '$'
+    'currency_symbol'                                   => '$',
 
 ];
